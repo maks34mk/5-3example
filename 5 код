@@ -1,0 +1,134 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	setlocale(0, "");
+	int num0;
+	int num1;
+	int num2=0;
+	int num3=0;
+	unsigned int num4;
+	int num8=0;
+	cout << "[1]Программа которая выводит четные и нечетные числа отдельно на экран от 1 до 30." << endl;
+	cout << "[2]Программа которая выводит на экран таблицу умножения." << endl;
+	cout << "[3]Программа которая считает сумму всех чисел от 1 до 200. " << endl;
+	cout << "[4]Программа которая считает факториал числа 20." << endl;
+	cout << "[5]Программа которая выводит на экран сумму всех чисел, кратных 2 или 3, в диапазоне от 1 до 100." << endl;
+	cout << "[6]Программа которая выводит на экран первые 10 чисел Фибоначчи." << endl;
+	cout << "[7]Программа которая запрашивает у пользователя число и выводит на экран все его делители." << endl;
+	cout << "[8]Нарисовать равнобедренную трапецию и квадрат из символов *. Высоту выбирает пользователь. " << endl;
+	cout << "" << endl;
+	cout << "Введите нужный пункт:";
+	cin >> num0;
+	system("cls");
+
+	switch (num0)
+	{
+	case 1:
+		for (int i = 1; i <= 30; i++) {
+			if (i % 2 == 0)
+			{
+				cout << i << " ";
+			}
+			cout << "" << endl;
+			if (i % 2)
+			{
+				cout << i << " ";
+			}
+		}
+		break;
+	case 2:
+		for (int i = 1; i <= 10; i++)
+		{
+			for (int j = 1; j <= 10; j++)
+			{
+				num2 = i * j;
+				cout << i << "*" << j << "=" << num2<< endl;
+			}
+			cout << " " << endl;
+		}
+		break;
+
+	case 3:
+		for (int i = 1; i <= 200;i++)
+		{
+			num3 += i;
+		}
+		cout <<"Сумма:" << num3;
+		break;
+
+	case 4:
+		num4 = 1 * 2 * 3 * 4 * 5 * 6 * 7 * 8 * 9 * 10 * 11 * 12 * 13 * 14 * 15 * 16 * 17 * 18 * 19 * 20;
+		cout << "!20=" << num4;
+		break;
+
+	case 5:
+		for (int i = 1; i <= 100; i++)
+		{
+			if (i % 2==0 || i % 3==0)
+			{
+				cout << i << endl;
+			}
+		}
+		break;
+
+	case 6:
+		cout << "Первые 10 чисел Фибоначчи:0, 1, 1, 2, 3, 5, 8, 13, 21, 34";
+		break;
+
+	case 7:
+		cout << "Введите число:";
+		cin >> num1;
+
+		for (int i = 1; i <= num1; i++)
+		{
+			if (num1 % i == 0)
+			{
+				cout << i << endl;
+			}
+		}
+		break;
+
+	case 8:
+		cout << "[1]Трапеция" << endl;
+		cout << "[2]Квадратик" << endl;
+		cout << "" << endl;
+		cout << "Выберите нужный пункт:";
+		cin >> num0;
+		switch (num0) {
+		case 1:
+			cout << "Введите высоту  трапеции: ";
+			cin >> num2;
+
+			for (int i = 1; i < num2 + 1; i++)
+			{
+				for (int j = 0; j < num2 - i; j++)
+				{
+					cout << ' ';
+				}
+
+				for (int j = num2 - 3 * i; j <= num2; j++)
+				{
+					cout << '*';
+				}
+				cout << endl;
+			}
+			break;
+		case 2:
+			cout << "Введи размер квадрата: ";
+			cin >> num8;
+
+			for (int i = 0; i < num8; ++i)
+			{
+				for (int j = 0; j < num8; ++j)
+					cout << "* ";
+
+				cout << endl;
+			}
+		}
+		break;
+	}
+
+	return 0;
+}
